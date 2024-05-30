@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Administrador de Pacientes</title>
+  </head>
+  <body>
+    <h1 class="mx-auto mt-20 text-5xl font-black text-center md:w-2/3">
+			Seguimiento Pacientes
+			<span class="text-indigo-700">Veterinaria</span>
+    </h1>
+
+    <div class="container mx-auto mt-12 md:flex ">
+      <div class="mx-5 md:w-1/2 lg:w-2/5">
+        <h2 class="text-3xl font-black text-center">Seguimiento Pacientes</h2>
+
+        <p class="mt-5 mb-10 text-lg text-center">
+          Añade Pacientes y
+          <span class="font-bold text-indigo-600">Administralos</span>
+        </p>
+
+        <form 
+          id="formulario-cita"
+          class="px-5 py-10 mb-10 bg-white rounded-lg shadow-md"
+        >
+          <div class="mb-5">
+            <label for="paciente" class="block text-sm font-bold text-gray-700 uppercase">
+              Nombre Paciente:
+            </label>
+            <input
+              class="w-full p-2 mt-2 placeholder-gray-400 border-2 rounded-md"
+              type="text"
+              id="paciente"
+              placeholder="Nombre Paciente"
+              name="paciente"
+            />  
+          </div>
+
+          <div class="mb-5">
+            <label for="propietario" class="block text-sm font-bold text-gray-700 uppercase">
+              Nombre Propietario:
+            </label>
+            <input
+              class="w-full p-2 mt-2 placeholder-gray-400 border-2 rounded-md"
+              type="text"
+              id="propietario"
+              placeholder="Nombre Propietario"
+              name="propietario"
+            />  
+          </div>
+          <div class="mb-5">
+            <label for="email" class="block text-sm font-bold text-gray-700 uppercase">
+              Email Contacto
+            </label>
+            <input
+              class="w-full p-2 mt-2 placeholder-gray-400 border-2 rounded-md"
+              type="email"
+              id="email"
+              placeholder="E-mail Contacto"
+              name="email"
+            />  
+          </div>
+
+          <div class="mb-5">
+            <label for="fecha" class="block text-sm font-bold text-gray-700 uppercase">
+              Fecha Alta
+            </label>
+            <input
+              class="w-full p-2 mt-2 placeholder-gray-400 border-2 rounded-md"
+              type="date"
+              id="fecha"
+              name="fecha"
+            />  
+          </div>
+
+          <div class="mb-5">
+            <label for="sintomas" class="block text-sm font-bold text-gray-700 uppercase">
+              Síntomas
+            </label>
+            <textarea
+              class="w-full p-2 mt-2 placeholder-gray-400 border-2 rounded-md"
+              id="sintomas"
+              name="sintomas"
+              placeholder="Síntomas del Paciente"
+            ></textarea>  
+          </div>
+
+          <input
+            type="submit"
+            class="w-full p-3 font-bold text-white uppercase transition-colors bg-indigo-600 cursor-pointer hover:bg-indigo-700"
+            value='Registrar Paciente'
+          />
+        </form>
+      </div>
+
+      <div class="overflow-y-scroll md:w-1/2 lg:w-3/5 md:h-screen">
+        <h2 class="text-3xl font-black text-center">Listado Pacientes</h2>
+        <p class="mt-5 mb-10 text-xl text-center">
+          Administra tus
+          <span class="font-bold text-indigo-600 ">Pacientes y Citas</span>
+        </p>
+        <div id="citas">
+          <p class="mt-5 mb-10 text-xl text-center">No Hay Pacientes</p>
+        </div>
+      </div>
+    </div>  
+
+    <dialog id="confirmationModal" class="p-5 py-10 border-2 rounded-lg">
+      <form method="dialog">
+          <p class="pb-2 mb-5 text-3xl">¿Desea eliminar este paciente?</p>
+          <div class="modal-buttons">
+            <button class="px-5 py-2 font-bold text-white bg-indigo-600 border btn-yes" value="yes" id="btn-modal-yes">Sí</button>
+            <button class="px-5 py-2 font-bold btn-cancel" value="cancel" id="btn-modal-cancel">Cancelar</button>
+          </div>
+      </form>
+    </dialog>
+    <script type="module" src="./src/app.ts"></script>
+  </body>
+</html>
